@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+
+<button id="toggleButton">Click Me</button>
+<div id="toggleElement">
+  0
+</div>
+<div>
+    <p>Total Click: <span id="total-click">0</span></p>
+</div>
+
+<script>
+  const toggleButton = document.getElementById('toggleButton');
+  const toggleElement = document.getElementById('toggleElement').innerText;
+  let toggle = parseInt(toggleElement);
+  const clickText = document.getElementById('total-click').innerText;
+  console.log(clickText);
+  const clickValue = parseInt(clickText);
+  console.log(clickValue);
+  let total = 0;
+ 
+  toggleButton.addEventListener('click', () => {
+    total++;
+    document.getElementById("total-click").innerText = total;
+    if (toggle === 0) {
+        toggle++;
+        const toggleElement2 = document.getElementById('toggleElement')
+        toggleElement2.innerText = toggle
+      console.log(toggle);
+    } else if (toggle === 1) {
+        toggle--;
+        const toggleElement2 = document.getElementById('toggleElement')
+        toggleElement2.innerText = toggle
+    }
+  });
+</script>
+
+</body>
+</html>
